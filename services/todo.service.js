@@ -13,14 +13,18 @@ const addNew = async (todo) => {
 };
 
 const changeField = async (id, field, newValue) => {
-  const updatedTodo = await Todos.findOneAndUpdate(
+  const filter = { [field]: newValue };
+  const updatedTodo = await Todos.findByIdAndUpdate(
     id,
     {
-      [field]: newValue,
+      $set: {
+        [field]: newValue,
+      },
     },
     { new: true }
   );
   if (!updatedTodo) throw new Error("Todo is not updated");
+  console.log(updatedTodo);
   return updatedTodo;
 };
 

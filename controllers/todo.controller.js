@@ -23,6 +23,7 @@ const changeField = async (req, res) => {
   const { id, field, newValue } = req.body;
   try {
     const updatedTodo = await todoServices.changeField(id, field, newValue);
+    console.log(updatedTodo);
     res.status(200).send(updatedTodo);
   } catch (error) {
     res.status(500).send({ message: error.message });
