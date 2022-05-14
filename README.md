@@ -55,4 +55,4 @@ const todoSchema = new mongoose.Schema({
 
 # Deployment
 
-Application is deployed [on Heroku:](https://personal-diary-app-backend.herokuapp.com/)
+Application is deployed [on Heroku](https://personal-diary-app-backend.herokuapp.com/)
